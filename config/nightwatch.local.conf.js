@@ -32,10 +32,7 @@ module.exports = {
     "chrome": {
       "desiredCapabilities": {
         "browserName": "chrome",
-        "javascriptEnabled": true,
-        "chromeOptions": {
-          "args": [""]
-        }
+        "javascriptEnabled": true
       }
     },
     "safari": {
@@ -43,40 +40,6 @@ module.exports = {
         "browserName": "safari",
         "javascriptEnabled": true
       }
-    },
-    ie9: {
-      desiredCapabilities: {
-        'browser': 'IE',
-        'browser_version': '9.0',
-      }
-    },
-    ie10: {
-      desiredCapabilities: {
-        'browser': 'IE',
-        'browser_version': '10.0',
-      }
-    },
-    ie11: {
-      desiredCapabilities: {
-        'browser': 'IE',
-        'browser_version': '11.0',
-      }
     }
   }
 };
-
-/**
- * selenium-download does exactly what it's name suggests;
- * downloads (or updates) the version of Selenium (& chromedriver)
- * on your localhost where it will be used by Nightwatch.
- /the following code checks for the existence of `selenium.jar` before trying to run our tests.
- */
-
-require('fs').stat(BINPATH + 'selenium.jar', function (err, stat) { // got it?
-  if (err || !stat || stat.size < 1) {
-    require('selenium-download').ensure(BINPATH, function (error) {
-      if (error) throw new Error(error); // no point continuing so exit!
-      console.log('✔ Selenium & Chromedriver downloaded to:', BINPATH);
-    });
-  }
-});

@@ -171,15 +171,4 @@ nightwatch_config = {
   }
 };
 
-// Code to support common capabilites
-for (let i in nightwatch_config.test_settings) {
-  let config = nightwatch_config.test_settings[i];
-  config['selenium_host'] = nightwatch_config.selenium.host;
-  config['selenium_port'] = nightwatch_config.selenium.port;
-  config['desiredCapabilities'] = config['desiredCapabilities'] || {};
-  for (let j in nightwatch_config.common_capabilities) {
-    config['desiredCapabilities'][j] = config['desiredCapabilities'][j] || nightwatch_config.common_capabilities[j];
-  }
-}
-
 module.exports = nightwatch_config;
