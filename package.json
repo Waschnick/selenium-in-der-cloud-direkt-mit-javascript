@@ -1,0 +1,40 @@
+{
+  "name": "selenium-in-der-cloud-direkt-mit-javascript",
+  "version": "1.0.0",
+  "description": "Selenium in der Cloud direkt mit JavaScript",
+  "keywords": [
+    "Selenium",
+    "NightwatchJS",
+    "BrowserStack"
+  ],
+  "author": "Axel Springer Ideas Engineering GmbH",
+  "license": "MIT",
+  "scripts": {
+    "pretest": "mkdir -p target/reports && node config/download-selenium.js",
+    "test:chrome": "./node_modules/.bin/nightwatch -c config/nightwatch.local.conf.js -e chrome",
+    "test:safari": "./node_modules/.bin/nightwatch -c config/nightwatch.local.conf.js -e safari",
+    "test:jenkins": "./node_modules/.bin/nightwatch -c config/nightwatch.jenkins.conf.js -e chrome"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-preset-env": "1.7.0",
+    "babel-register": "6.26.0",
+    "nightwatch": "0.9.21",
+    "nightwatch-html-reporter": "2.0.5",
+    "puppeteer": "1.4.0",
+    "raw-loader": "0.5.1",
+    "rimraf": "2.6.2",
+    "selenium-download": "2.0.12"
+  },
+  "peerDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Waschnick/oil.git"
+  },
+  "engine-strict": true,
+  "engines": {
+    "node": ">= 8.8 <9",
+    "npm": ">= 6.0"
+  }
+}
