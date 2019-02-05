@@ -1,4 +1,3 @@
-// we use a nightwatch.remote.conf.js file so we can include comments and helper functions
 module.exports = {
   "src_folders": [
     "test/e2e"
