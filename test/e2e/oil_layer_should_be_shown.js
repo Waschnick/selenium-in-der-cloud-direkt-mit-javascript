@@ -1,20 +1,14 @@
-const OIL_LAYER = '//*[@data-qa="oil-Layer"]';
-const PAGE_BACKGROUND = '.has-big-bad-background';
-const OIL_YES_BUTTON = '//*[@data-qa="oil-YesButton"]';
+const OilLayerInitalPage = require("./OilLayerInitalPage");
+
+const OIL_LAYER = OilLayerInitalPage.OIL_LAYER;
+const OIL_YES_BUTTON = OilLayerInitalPage.OIL_YES_BUTTON;
+const PAGE_BACKGROUND = OilLayerInitalPage.PAGE_BACKGROUND;
 
 module.exports = {
   '@disabled': false,
   beforeEach: browser => {
-    browser
-      .url(browser.globals.launch_url_host1 + 'demos/direct-integration.html')
-      .deleteCookies();
-
-    browser
-      .url(browser.globals.launch_url_host1 + 'demos/direct-integration.html')
-      .useCss()
-      .waitForElementVisible(PAGE_BACKGROUND, 1000, false)
-      .useXpath()
-      .waitForElementVisible(OIL_YES_BUTTON, 2000, false);
+    OilLayerInitalPage.resetCookiesOnDemoPage(browser);
+    OilLayerInitalPage.openDemoPage(browser);
   },
 
   'OIL Layer closed after clicking yes': function (browser) {
@@ -31,5 +25,34 @@ module.exports = {
       .waitForElementNotPresent(OIL_LAYER, 1000)
       .waitForElementNotPresent(OIL_YES_BUTTON, 1000)
       .end();
+  },
+
+  'OIL Layer closed after clicking yes (with page object)': function (browser) {
+    OilLayerInitalPage.assertOilIsVisible(browser);
+    OilLayerInitalPage.clickOnGiveConsent(browser);
+    OilLayerInitalPage.assertOilLayerNotPresent(browser);
+  },
+
+  'OIL Layer closed after clicking yes (BDD style)': function (browser) {
+    givenOilIsVisible(browser);
+
+    whenClickOnGiveConsent(browser);
+
+    thenOilLayerIsNotPresent(browser);
+  },
+
+  givenOilIsVisible: (browser) => {
+    OilLayerInitalPage.assertOilIsVisible(browser);
+  },
+
+  whenClickOnGiveConsent: (browser) => {
+    OilLayerInitalPage.clickOnGiveConsent(browser);
+  },
+
+  thenOilLayerIsNotPresent: (browser) => {
+    OilLayerInitalPage.assertOilLayerNotPresent(browser);
   }
+
 };
+
+

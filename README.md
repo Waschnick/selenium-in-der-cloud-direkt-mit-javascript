@@ -1,4 +1,7 @@
 # Selenium in der Cloud direkt mit JavaScript
+## Quickstart
+
+Running tests: ``npm run test:chrome``
 
 ## Running only one single test
 

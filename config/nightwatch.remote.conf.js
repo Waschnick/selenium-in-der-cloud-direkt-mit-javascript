@@ -115,10 +115,10 @@ nightwatch_config = {
     },
     android8: {
       desiredCapabilities: {
-        'os_version' : '8.0',
-        'device' : 'Samsung Galaxy S9',
-        'real_mobile' : 'true',
-        'browserstack.console' : 'disable'
+        'os_version': '8.0',
+        'device': 'Samsung Galaxy S9',
+        'real_mobile': 'true',
+        'browserstack.console': 'disable'
       },
     },
     galaxyNote4: {
