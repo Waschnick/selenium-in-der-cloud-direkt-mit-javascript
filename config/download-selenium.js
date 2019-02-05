@@ -5,7 +5,8 @@ const BINPATH = './node_modules/nightwatch/bin/';
  * downloads (or updates) the version of Selenium (& chromedriver)
  * on your localhost where it will be used by Nightwatch.
  *
- * the following code checks for the existence of `selenium.jar` before trying to run our tests
+ * the following code checks for the existence of `selenium.jar`
+ * before trying to run our tests
  */
 require('fs').stat(BINPATH + 'selenium.jar', function (err, stat) {
   // got it?
