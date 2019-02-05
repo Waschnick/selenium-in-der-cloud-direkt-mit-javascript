@@ -24,7 +24,6 @@
     "nightwatch": "0.9.21",
     "nightwatch-html-reporter": "2.0.5",
     "puppeteer": "1.4.0",
-    "raw-loader": "0.5.1",
     "rimraf": "2.6.2",
     "selenium-download": "2.0.12"
   },
