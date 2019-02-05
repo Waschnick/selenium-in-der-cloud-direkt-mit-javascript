@@ -1,4 +1,4 @@
-const OilLayerInitalPage = require("./OilLayerInitalPage");
+const OilLayerInitalPage = require("./../pages/OilLayerInitalPage");
 
 const OIL_LAYER = OilLayerInitalPage.OIL_LAYER;
 const OIL_YES_BUTTON = OilLayerInitalPage.OIL_YES_BUTTON;
@@ -13,6 +13,9 @@ module.exports = {
 
   'OIL Layer closed after clicking yes': function (browser) {
     browser
+      .useXpath()
+      .waitForElementPresent(OIL_LAYER, 1000)
+      .waitForElementPresent(OIL_YES_BUTTON, 1000)
       .click(OIL_YES_BUTTON)
       .pause(200)
       .waitForElementNotPresent(OIL_LAYER, 1000)
@@ -40,19 +43,18 @@ module.exports = {
 
     thenOilLayerIsNotPresent(browser);
   },
-
-  givenOilIsVisible: (browser) => {
-    OilLayerInitalPage.assertOilIsVisible(browser);
-  },
-
-  whenClickOnGiveConsent: (browser) => {
-    OilLayerInitalPage.clickOnGiveConsent(browser);
-  },
-
-  thenOilLayerIsNotPresent: (browser) => {
-    OilLayerInitalPage.assertOilLayerNotPresent(browser);
-  }
-
 };
+
+function givenOilIsVisible(browser) {
+  OilLayerInitalPage.assertOilIsVisible(browser);
+}
+
+function whenClickOnGiveConsent(browser) {
+  OilLayerInitalPage.clickOnGiveConsent(browser);
+}
+
+function thenOilLayerIsNotPresent(browser) {
+  OilLayerInitalPage.assertOilLayerNotPresent(browser);
+}
 
 
