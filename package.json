@@ -10,11 +10,11 @@
   "author": "Axel Springer Ideas Engineering GmbH",
   "license": "MIT",
   "scripts": {
-    "setup": "mkdir -p target/reports && node config/download-selenium.js",
-    "test:chrome": "npm run setup && ./node_modules/.bin/nightwatch -c config/nightwatch.local.conf.js -e chrome",
-    "test:safari": "npm run setup && ./node_modules/.bin/nightwatch -c config/nightwatch.local.conf.js -e safari",
-    "test:jenkins": "npm run setup && ./node_modules/.bin/nightwatch -c config/nightwatch.jenkins.conf.js -e chrome",
-    "test:remote": "npm run setup && ./node_modules/.bin/nightwatch -c config/nightwatch.remote.conf.js -e ie11"
+    "postinstall": "mkdir -p target/reports && node config/download-selenium.js",
+    "test:chrome": "./node_modules/.bin/nightwatch -c config/nightwatch.local.conf.js -e chrome",
+    "test:safari": "./node_modules/.bin/nightwatch -c config/nightwatch.local.conf.js -e safari",
+    "test:jenkins": "./node_modules/.bin/nightwatch -c config/nightwatch.jenkins.conf.js -e chrome",
+    "test:remote": "./node_modules/.bin/nightwatch -c config/nightwatch.remote.conf.js -e ie11"
   },
   "dependencies": {},
   "devDependencies": {
