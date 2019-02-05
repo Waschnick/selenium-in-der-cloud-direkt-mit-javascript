@@ -18,13 +18,9 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "babel-core": "6.26.0",
-    "babel-preset-env": "1.7.0",
-    "babel-register": "6.26.0",
     "nightwatch": "0.9.21",
     "nightwatch-html-reporter": "2.0.5",
     "puppeteer": "1.4.0",
-    "rimraf": "2.6.2",
     "selenium-download": "2.0.12"
   },
   "peerDependencies": {},

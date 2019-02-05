@@ -7,8 +7,8 @@ npm install --save nightwatch nightwatch-html-reporter
 # Let's get some chrome and some selenium automatically
 npm install --save puppeteer selenium-download
 
-# I want to use the coolest features in my tests
-npm install --save rimraf babel-core babel-preset-env babel-register
+# OPTIONAL: If you want to use the coolest new JS features in your tests
+npm install --save babel-core babel-preset-env babel-register
 
 
 
