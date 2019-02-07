@@ -1,7 +1,15 @@
 # Selenium in der Cloud direkt mit JavaScript
+
+See ``./init.bash`` for information on how to setup the project.
+
+(Slides can be found here.)[https://de.slideshare.net/CanardSauvage/automatisiert-eure-tests-endtoend-testing-mit-selenium-javascript-ct-webdev-conference-07022019] 
+
 ## Quickstart
 
-Running tests: ``npm run test:chrome``
+```
+npm install
+npm run test:chrome
+```
 
 ## Running only one single test
 
@@ -10,6 +18,14 @@ If you want to run only one test, in this example only tests from the file `test
     ./node_modules/.bin/nightwatch -c config/nightwatch.local.conf.js -e chrome --test test/e2e/direct_integration_test.js
 
 You can also run your local e2e tests with different browsers using Browserstack.
+
+## Support for BABEL
+
+```
+npm install --save babel-core babel-preset-env babel-register
+```
+
+Add ``require('babel-register')();`` on the first line of your Nightwatch.js config (cf. config/nightwatch.remote.conf.js:1)
 
 ## Browserstack 
 
