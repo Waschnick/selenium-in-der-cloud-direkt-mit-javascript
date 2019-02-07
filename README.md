@@ -2,7 +2,7 @@
 
 See ``./init.bash`` for information on how to setup the project.
 
-(Slides can be found here.)[https://de.slideshare.net/CanardSauvage/automatisiert-eure-tests-endtoend-testing-mit-selenium-javascript-ct-webdev-conference-07022019] 
+[Slides can be found here.](https://de.slideshare.net/CanardSauvage/automatisiert-eure-tests-endtoend-testing-mit-selenium-javascript-ct-webdev-conference-07022019) 
 
 ## Quickstart
 
